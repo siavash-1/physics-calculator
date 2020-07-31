@@ -9,20 +9,19 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
 
-
-
-
 class Ui_MainWindow(object):
-    #bolean1 = False
-    round_num =3
+    
     num = 0.0
     g2 = 9.8
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(534, 429)
+        
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("Pictures/testkochock2fdsjjqwertyuioupudupulipadiksimontareweqwertapi.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
+        
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         
@@ -57,12 +56,6 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         
-        #self.timer = QTimer(self) 
-        #self.timer.timeout.connect(self.timeshow) 
-        #self.timer.start(100) 
-  
-        
-        
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
@@ -74,8 +67,6 @@ class Ui_MainWindow(object):
         self.startbutton.setText(_translate("MainWindow", "start"))
         self.stopbutton.setText(_translate("MainWindow", "stop"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:48pt;\">M:</span></p></body></html>"))
-
-
 
 
 
@@ -91,12 +82,8 @@ class Ui_MainWindow(object):
         self.stopwatch.timeout.connect(self.timeshow)
         self.stopwatch.start(100)
         
-        #self.bolean1 = True
-      
+       
 
-    
-    
-    
     def stop_stopwatch(self):
         self.stopwatch.stop()
         self.lcdNumber_2.display(self.g2/2*(self.num/10)**2)
@@ -105,6 +92,7 @@ class Ui_MainWindow(object):
     
     
     
+        
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -113,3 +101,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
