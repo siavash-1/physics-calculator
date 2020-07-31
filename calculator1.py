@@ -1,11 +1,12 @@
-
+#calculates height based on time in free fall for an object without air resistance
+#pyqt 5.14.1
+#
+#
+#
+#
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-from PyQt5.QtWidgets import * 
-from PyQt5 import QtCore, QtGui 
-from PyQt5.QtGui import * 
-from PyQt5.QtCore import * 
 
 
 
@@ -104,14 +105,6 @@ class Ui_MainWindow(object):
     
     
     
-        
-
-
-
-
-
-
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
