@@ -1,6 +1,4 @@
 
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from PyQt5.QtWidgets import * 
@@ -8,12 +6,8 @@ from PyQt5 import QtCore, QtGui
 from PyQt5.QtGui import * 
 from PyQt5.QtCore import * 
 
-
-
-
-
 class Ui_MainWindow(object):
-    bolean1 = False
+    #bolean1 = False
     
     num = 0.0
     def setupUi(self, MainWindow):
@@ -81,23 +75,23 @@ class Ui_MainWindow(object):
     def timeshow(self):
         self.num += 1
         self.lcdNumber.display(self.num/10)
-        #if self.bolean1:
-            #self.num += 1
-            #self.lcdNumber.display(self.num/10)
+        
 
     def start_stopwatch(self):
+        self.num = 0
         self.stopwatch = QtCore.QTimer()
         self.stopwatch.timeout.connect(self.timeshow)
         self.stopwatch.start(100)
         
-        self.bolean1 = True
+        #self.bolean1 = True
       
 
     
     
     
     def stop_stopwatch(self):
-        print("Stop")
+        self.stopwatch.stop()
+    
     
     
     
@@ -110,4 +104,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
