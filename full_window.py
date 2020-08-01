@@ -1,8 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-
-
-
+from PyQt5.QtWidgets import QMessageBox
 
 class Ui_FirstWindow((object)):
     def setupUi(self, MainWindow):
@@ -56,8 +54,7 @@ class Ui_FirstWindow((object)):
         self.menubar.addAction(self.menutools.menuAction())
         self.menubar.addAction(self.menusettings.menuAction())
         self.menubar.addAction(self.menuhelp.menuAction())
-        #self.actionheight_calc1.triggered.connect(self.test1)
-        
+        self.actionabout.triggered.connect(self.about_open)
     
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -92,6 +89,17 @@ class Ui_FirstWindow((object)):
         ui = Ui_SecondWindow()
         ui.setupUi(SecondWindow)
         SecondWindow.show()
+        
+        
+    
+    def about_open(self):
+        about = QMessageBox()
+        about.setWindowTitle("about")
+        about.setText("this is a simple calculator to calculate height based on an objects time in free fall with no air resistance")
+        about.setIcon(QMessageBox.Information)
+        about.setDetailedText("the formula is: gravitational acceleration divided by two times time in free fall squared, g/2 * T*T")
+        a = about.exec_() 
+         
         
 class Ui_SecondWindow(object):
     
@@ -171,6 +179,11 @@ class Ui_SecondWindow(object):
     def stop_stopwatch(self):
         self.stopwatch.stop()
         self.lcdNumber_2.display(self.g2/2*(self.num/10)**2)
+        
+        
+        
+        
+        
         
         
 class Controller:
