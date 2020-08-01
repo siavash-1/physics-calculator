@@ -1,8 +1,7 @@
 
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWidgets import QMessageBox
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -56,7 +55,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menutools.menuAction())
         self.menubar.addAction(self.menusettings.menuAction())
         self.menubar.addAction(self.menuhelp.menuAction())
-        self.actionheight_calc1.triggered.connect(self.test1)
+        self.actionabout.triggered.connect(self.about_open)
         
     
         self.retranslateUi(MainWindow)
@@ -84,10 +83,21 @@ class Ui_MainWindow(object):
         self.actionsettings_1.setStatusTip(_translate("MainWindow", "configure owgendi"))
         self.actionsettings_1.setShortcut(_translate("MainWindow", "Ctrl+S, Ctrl+1"))
         
-    def test1(self):
+    def about_open(self):
+        about = QMessageBox()
+        about.setWindowTitle("about")
+        about.setText("this is a simple calculator to calculate height based on an objects time in free fall with no air resistance")
+        about.setIcon(QMessageBox.Information)
+        about.setDetailedText("the formula is: gravitational acceleration divided by two times time in free fall squared, g/2 * T*T")
+        a = about.exec_() 
          
 
-            
+
+
+
+
+
+
 
 if __name__ == "__main__":
     import sys
@@ -97,4 +107,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
