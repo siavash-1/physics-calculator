@@ -1,5 +1,4 @@
-# 5 14 1
-
+#
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
