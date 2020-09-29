@@ -75,7 +75,7 @@ class Ui_FirstWindow((object)):
     def about_open(self):
         about = QMessageBox()
         about.setWindowTitle("about")
-        about.setText("this is a simple calculator to calculate height based on an objects time in free fall with no air resistance")
+        about.setText("simple calculator to calculate height based on an objects time in free fall with no air resistance")
         about.setIcon(QMessageBox.Information)
         about.setDetailedText("the formula is: gravitational acceleration divided by two times time in free fall squared, g/2 * T*T")
         a = about.exec_() 
